@@ -1,0 +1,156 @@
+:root{
+    --yellow: #edb118;
+}
+
+.s1Container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+    gap: 100px;
+    margin-top: 20px;
+}
+
+.s1divTitle{
+  margin-top: 70px;
+  display: flex;
+  justify-content: center;
+}
+
+.s1Title{
+  display: flex;
+  justify-content: center;
+  padding: 10px 30px;
+  border-radius: 15px;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  color: white;
+}
+
+.s1Title::before{
+    content: "";
+    position: absolute;
+    z-index: -2;
+    width: 150px;
+    height: 400%;
+    background: linear-gradient(to right, transparent, var(--yellow), transparent);
+    top: 50%;
+    left: 50%;
+    transform-origin: center;
+    animation: glowing_401 5s linear infinite;
+}
+
+.s1Title::after{
+    content: "";
+    background-color: #212121;
+    border-radius: 12px;
+    position: absolute;
+    inset: 3px;
+    z-index: -1;
+}
+
+@keyframes glowing_401 {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg) }
+}
+
+
+.card {
+    width: 384px;
+    height: 434px;
+    background-color: black;
+    border-radius: 1rem;
+    border: #212121 0.2rem solid;
+    transition: all 0.4s ease-in;
+    box-shadow: 0.4rem 0.4rem 0.6rem #edb118a9, -15px -15px 30px #edb118a9;
+    display: flex;
+    margin-top: 40px;
+    margin-left: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+.card:hover{
+    transform: translateY(-1.5rem);
+    border: var(--yellow) 0.2em solid;
+    border-radius: 2.5rem 0 2.5rem 0;
+}
+
+.cardList{
+    color: white;
+    text-align: center;
+    font-size: larger;
+    background-color: transparent;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.listText{
+    background-color: transparent;
+    font-weight: 700;
+    
+}
+
+.listSubTitle{
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+    font-weight: 700;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: auto;
+    line-height: 1;
+    font-style: italic;
+    color: black;
+    text-shadow: 
+        1.5px 1.5px 0 var(--yellow), 
+        1.5px -1.5px 0 var(--yellow), 
+        -1.5px 1.5px 0 var(--yellow), 
+        -1.5px -1.5px 0 var(--yellow),
+        0 0 10px var(--yellow), 
+        0 0 20px var(--yellow);
+    letter-spacing: -2px;
+    margin-bottom: 20px;
+}
+
+.carouselWrap{
+    width: 700px;
+    height: 500px;
+    background-color: #212121;
+    border-radius: 1rem;
+    border: var(--yellow) 0.2rem solid;
+    box-shadow: rgba(245, 245, 245, 0.11) 2px 7px 20px 2px;
+    overflow: hidden;
+    margin-right: 100px;
+    margin-top: 40px;
+}
+
+.carouselTrack{
+    display: flex;
+    height: 100%;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+}
+
+.carouselTrack::-webkit-scrollbar{
+    display: none;
+}
+
+.carouselItem{
+    min-width: 100%;
+    height: 100%;
+    object-fit: cover;
+    scroll-snap-align: center;
+}

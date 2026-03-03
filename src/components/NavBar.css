@@ -1,0 +1,81 @@
+:root{
+    --yellow: #edb118;
+}
+
+.navBar{
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 20px 50px;
+    justify-content: space-between;
+    box-shadow: rgba(255, 255, 255, 0.19) 0px 10px 20px, rgba(223, 222, 222, 0.23) 0px 6px 6px;
+}
+
+#navLogo{
+  width: 150px;
+  height: auto;
+  margin-left: 40px;
+}
+
+.navPills{
+    display: flex;
+    justify-content: center;
+    transform: translateX(-50%);
+    position: absolute;
+    align-items: center;
+    list-style: none;
+    top: 25px;
+    gap: 0px;
+    left: 50%;
+}
+
+.navLink{
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    transition:  500ms;
+    position: relative;
+}
+
+.navLink::after{
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    margin-left: 6px;
+    left: 0;
+    width: 94%;
+    height: 2px;
+    background-color: var(--yellow);
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 300ms ease;
+}
+
+.navLink:hover::after{
+    transform: scaleX(1);
+}
+
+#navLi::before{
+  content: "⊿";
+  background-color: inherit;
+  color: var(--yellow);
+}
+
+#btn-aluno{
+    margin-right: 60px;
+    border: 3px transparent;
+    padding: 7px;
+    border-radius: 7px;
+    font-size: 17px;
+    transition: ease-in-out 250ms;
+}
+
+#btn-aluno:hover{
+    background: white;
+    color: black;
+    box-shadow: rgba(97, 96, 96, 0.35) 0px 5px 15px;
+}
+
+a{
+    text-decoration: none;
+}
